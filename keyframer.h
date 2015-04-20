@@ -50,71 +50,71 @@ public:
 	ENDBEHAVIOR(char);
 };
 
-	class TRACK:public LIST<KEY>{
-	public:
-		int matrixid,parentid,targetid;
-		TRACKTYPE type;
-		VECTOR rotate;
-		ENDBEHAVIOR rotatebehavior;
-		VECTOR scale;
-		ENDBEHAVIOR scalebehavior;
-		VECTOR translate;
-		ENDBEHAVIOR translatebehavior;
-		MATRIX pivot;
-		MATRIX *matrix;
-		TRACK *parent;
-		TRACK *target;
+class TRACK:public LIST<KEY>{
+public:
+	int matrixid,parentid,targetid;
+	TRACKTYPE type;
+	VECTOR rotate;
+	ENDBEHAVIOR rotatebehavior;
+	VECTOR scale;
+	ENDBEHAVIOR scalebehavior;
+	VECTOR translate;
+	ENDBEHAVIOR translatebehavior;
+	MATRIX pivot;
+	MATRIX *matrix;
+	TRACK *parent;
+	TRACK *target;
 
-		TRACK(void);
+	TRACK(void);
 
-		void Do(float);
+	void Do(float);
 
-		TRACK *previous,*next;
-	};
+	TRACK *previous,*next;
+};
 
-	class TEXTURELIST:public LIST<TEXTURE>{
-	public:
+class TEXTURELIST:public LIST<TEXTURE>{
+public:
 
-		TEXTURE *Search(char *);
-	};
+	TEXTURE *Search(char *);
+};
 
-	class MODELLIST:public LIST<MODEL>{
-	public:
+class MODELLIST:public LIST<MODEL>{
+public:
 
-		MODEL *Search(int);
-		MODEL *Search(char *);
-		void Draw(void);
-	};
+	MODEL *Search(int);
+	MODEL *Search(char *);
+	void Draw(void);
+};
 
-	class LIGHTLIST:public LIST<LIGHT>{
-	public:
-		
-		LIGHT *Search(int);
-	};
+class LIGHTLIST:public LIST<LIGHT>{
+public:
+	
+	LIGHT *Search(int);
+};
 
-	class CAMERALIST:public LIST<CAMERA>{
-	public:
+class CAMERALIST:public LIST<CAMERA>{
+public:
 
-		CAMERA *Search(int);
-	};
+	CAMERA *Search(int);
+};
 
-	class TRACKLIST:public LIST<TRACK>{
-	public:
+class TRACKLIST:public LIST<TRACK>{
+public:
 
-		TRACK *Search(int);
-		void Do(float);
-	};
+	TRACK *Search(int);
+	void Do(float);
+};
 
-	class SCENE{
-	public:
-		TEXTURELIST texturelist;
-		MODELLIST modellist;
-		LIGHTLIST lightlist;
-		CAMERALIST cameralist;
-		TRACKLIST tracklist;
+class SCENE{
+public:
+	TEXTURELIST texturelist;
+	MODELLIST modellist;
+	LIGHTLIST lightlist;
+	CAMERALIST cameralist;
+	TRACKLIST tracklist;
 
-		void Do(float);
-		void Draw(void);
-	};
+	void Do(float);
+	void Draw(void);
+};
 
 #endif
