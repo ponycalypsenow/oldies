@@ -7,7 +7,7 @@
 
 HWND hWnd;
 HINSTANCE hInst;
-D3D d3d("maestro by fungi 2oo1",800,600);
+D3D d3d("fungi 2oo1",800,600);
 TIME time;
 
 LWS scn("scene.lws");
